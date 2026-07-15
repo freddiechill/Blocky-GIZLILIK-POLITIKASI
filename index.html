@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocky - Gizlilik Politikası</title>
+    <meta name="description" content="Blocky eklentisi için gizlilik politikası ve kullanıcı verileri bilgilendirmesi.">
+    
+    <!-- Google Fonts: Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'media',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Rubik', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Ekstra yumuşak geçişler için temel stil */
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 selection:bg-primary selection:text-white pb-16">
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
+        
+        <!-- İçerik Kartı -->
+        <article class="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 sm:p-10 lg:p-12">
+            
+            <header class="mb-10 border-b border-slate-200 dark:border-slate-700 pb-8 text-center sm:text-left">
+                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">
+                    BLOCKY GİZLİLİK POLİTİKASI
+                </h1>
+                <p class="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center justify-center sm:justify-start">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    Son güncelleme: 15 Temmuz 2026
+                </p>
+            </header>
+
+            <div class="space-y-8 leading-relaxed text-slate-700 dark:text-slate-300">
+                
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">1. Genel bilgi</h2>
+                    <p>Blocky, internet sayfalarının üzerinde çalışan bir blok bulmaca eklentisidir. Bulut hesabı isteğe bağlıdır. Kullanıcı, hesap açmadan “Misafir Olarak Oyna” seçeneğini kullanabilir.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">2. Bulut hesabı kullanıldığında işlenen veriler</h2>
+                    <p class="mb-3">Kullanıcı bulut hesabı oluşturmayı veya mevcut hesabına giriş yapmayı seçerse aşağıdaki veriler Google Firebase hizmetlerine iletilir:</p>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-slate-400">
+                        <li><strong class="font-medium text-slate-800 dark:text-slate-200">Kullanıcının belirlediği kullanıcı adı:</strong> Firebase Authentication içinde teknik olarak “kullanıcıadı@zentetris.com” biçiminde işlenir.</li>
+                        <li><strong class="font-medium text-slate-800 dark:text-slate-200">Giriş veya kayıt sırasında şifre:</strong> Şifre yalnızca kimlik doğrulama amacıyla doğrudan Google Firebase Authentication hizmetine gönderilir; Blocky şifreyi tarayıcı depolamasında saklamaz.</li>
+                        <li><strong class="font-medium text-slate-800 dark:text-slate-200">Firebase kullanıcı kimliği ve oturum belirteçleri:</strong> Oturumun açık kalması için yenileme belirteci kullanıcının tarayıcısındaki eklenti depolamasında tutulur.</li>
+                        <li><strong class="font-medium text-slate-800 dark:text-slate-200">Kullanıcının en yüksek Blocky skoru:</strong> Skor, Cloud Firestore içindeki <code>tetris_scores</code> koleksiyonunda kullanıcının Firebase kimliğine bağlı olarak saklanır.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">3. Verilerin kullanım amacı</h2>
+                    <p class="mb-3">Bu veriler yalnızca:</p>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-slate-400 mb-3">
+                        <li>Kullanıcı hesabının oluşturulması ve doğrulanması,</li>
+                        <li>Kullanıcının oturumunun korunması,</li>
+                        <li>En yüksek skorun farklı bilgisayarlar ve yeniden kurulumlar arasında geri yüklenmesi ve eşitlenmesi</li>
+                    </ul>
+                    <p>amaçlarıyla kullanılır.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">4. Misafir modu</h2>
+                    <p>Misafir modunda hesap bilgisi veya skor Firebase’e gönderilmez. Misafir skoru ve devam eden oyun yalnızca kullanıcının tarayıcısındaki eklenti depolamasında saklanır.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">5. Toplanmayan veriler</h2>
+                    <p class="mb-3">Blocky;</p>
+                    <ul class="list-disc pl-5 space-y-1 marker:text-slate-400 mb-3">
+                        <li>Ziyaret edilen sayfaların içeriğini,</li>
+                        <li>Gezinme geçmişini,</li>
+                        <li>Form veya şifre alanlarını,</li>
+                        <li>Arama sorgularını,</li>
+                        <li>Konum bilgisini,</li>
+                        <li>Reklam kimliklerini,</li>
+                        <li>Analiz veya telemetri verilerini</li>
+                    </ul>
+                    <p>okumaz, kaydetmez veya iletmez.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">6. Üçüncü taraf hizmet sağlayıcısı</h2>
+                    <p>Bulut hesapları ve skor eşitleme özelliği için Google Firebase Authentication ve Google Cloud Firestore kullanılır. Google’ın kendi hizmet koşulları ve gizlilik uygulamaları bu hizmetler için ayrıca geçerlidir.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">7. Veri paylaşımı ve satış</h2>
+                    <p>Blocky kullanıcı verilerini satmaz, reklam amacıyla kullanmaz ve yukarıda açıklanan Google Firebase altyapısı dışında üçüncü taraflarla paylaşmaz.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">8. Veri güvenliği</h2>
+                    <p>Firestore güvenlik kuralları, her kullanıcının yalnızca kendi skor belgesini okuyabilmesini ve değiştirebilmesini sağlayacak şekilde yapılandırılmıştır. Eklenti içinde uzak JavaScript kodu çalıştırılmaz.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">9. Hesap ve veri silme</h2>
+                    <p class="mb-4">Kullanıcı, hesap ve skor verisinin silinmesini aşağıdaki iletişim adresinden talep edebilir. Talep doğrulandıktan sonra ilgili Firebase Authentication hesabı ve Firestore skor belgesi silinir.</p>
+                    <div class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 inline-block border border-slate-100 dark:border-slate-700">
+                        <span class="font-medium text-slate-900 dark:text-white mr-2">İletişim:</span>
+                        <a href="mailto:yenerarda7@gmail.com" class="text-primary hover:text-blue-700 dark:hover:text-blue-400 font-medium transition-colors">yenerarda7@gmail.com</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">10. Değişiklikler</h2>
+                    <p>Bu politika değiştirildiğinde güncellenme tarihi yenilenir. Önemli değişiklikler eklentinin mağaza sayfasında veya sürüm notlarında açıklanır.</p>
+                </section>
+
+            </div>
+        </article>
+        
+        <footer class="mt-8 text-center text-sm text-slate-500 dark:text-slate-400">
+            &copy; 2026 Blocky. Tüm hakları saklıdır.
+        </footer>
+
+    </main>
+
+</body>
+</html>
