@@ -1,0 +1,50 @@
+BLOCKY GİZLİLİK POLİTİKASI
+Son güncelleme: 15 Temmuz 2026
+
+1. Genel bilgi
+Blocky, internet sayfalarının üzerinde çalışan bir blok bulmaca eklentisidir. Bulut hesabı isteğe bağlıdır. Kullanıcı, hesap açmadan “Misafir Olarak Oyna” seçeneğini kullanabilir.
+
+2. Bulut hesabı kullanıldığında işlenen veriler
+Kullanıcı bulut hesabı oluşturmayı veya mevcut hesabına giriş yapmayı seçerse aşağıdaki veriler Google Firebase hizmetlerine iletilir:
+- Kullanıcının belirlediği kullanıcı adı. Firebase Authentication içinde teknik olarak “kullanıcıadı@zentetris.com” biçiminde işlenir.
+- Giriş veya kayıt sırasında şifre. Şifre yalnızca kimlik doğrulama amacıyla doğrudan Google Firebase Authentication hizmetine gönderilir; Blocky şifreyi tarayıcı depolamasında saklamaz.
+- Firebase kullanıcı kimliği ve oturum belirteçleri. Oturumun açık kalması için yenileme belirteci kullanıcının tarayıcısındaki eklenti depolamasında tutulur.
+- Kullanıcının en yüksek Blocky skoru. Skor, Cloud Firestore içindeki tetris_scores koleksiyonunda kullanıcının Firebase kimliğine bağlı olarak saklanır.
+
+3. Verilerin kullanım amacı
+Bu veriler yalnızca:
+- Kullanıcı hesabının oluşturulması ve doğrulanması,
+- Kullanıcının oturumunun korunması,
+- En yüksek skorun farklı bilgisayarlar ve yeniden kurulumlar arasında geri yüklenmesi ve eşitlenmesi
+amaçlarıyla kullanılır.
+
+4. Misafir modu
+Misafir modunda hesap bilgisi veya skor Firebase’e gönderilmez. Misafir skoru ve devam eden oyun yalnızca kullanıcının tarayıcısındaki eklenti depolamasında saklanır.
+
+5. Toplanmayan veriler
+Blocky;
+- Ziyaret edilen sayfaların içeriğini,
+- Gezinme geçmişini,
+- Form veya şifre alanlarını,
+- Arama sorgularını,
+- Konum bilgisini,
+- Reklam kimliklerini,
+- Analiz veya telemetri verilerini
+okumaz, kaydetmez veya iletmez.
+
+6. Üçüncü taraf hizmet sağlayıcısı
+Bulut hesapları ve skor eşitleme özelliği için Google Firebase Authentication ve Google Cloud Firestore kullanılır. Google’ın kendi hizmet koşulları ve gizlilik uygulamaları bu hizmetler için ayrıca geçerlidir.
+
+7. Veri paylaşımı ve satış
+Blocky kullanıcı verilerini satmaz, reklam amacıyla kullanmaz ve yukarıda açıklanan Google Firebase altyapısı dışında üçüncü taraflarla paylaşmaz.
+
+8. Veri güvenliği
+Firestore güvenlik kuralları, her kullanıcının yalnızca kendi skor belgesini okuyabilmesini ve değiştirebilmesini sağlayacak şekilde yapılandırılmıştır. Eklenti içinde uzak JavaScript kodu çalıştırılmaz.
+
+9. Hesap ve veri silme
+Kullanıcı, hesap ve skor verisinin silinmesini aşağıdaki iletişim adresinden talep edebilir. Talep doğrulandıktan sonra ilgili Firebase Authentication hesabı ve Firestore skor belgesi silinir.
+
+İletişim: yenerarda7@gmail.com
+
+10. Değişiklikler
+Bu politika değiştirildiğinde güncellenme tarihi yenilenir. Önemli değişiklikler eklentinin mağaza sayfasında veya sürüm notlarında açıklanır.
