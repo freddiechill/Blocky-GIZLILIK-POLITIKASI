@@ -50,7 +50,7 @@
                 </h1>
                 <p class="text-sm font-medium text-slate-500 dark:text-slate-400 flex items-center justify-center sm:justify-start">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    Son güncelleme: 15 Temmuz 2026
+                    Son güncelleme: 18 Temmuz 2026
                 </p>
             </header>
 
@@ -69,32 +69,49 @@
                         <li><strong class="font-medium text-slate-800 dark:text-slate-200">Giriş veya kayıt sırasında şifre:</strong> Şifre yalnızca kimlik doğrulama amacıyla doğrudan Google Firebase Authentication hizmetine gönderilir; Blocky şifreyi tarayıcı depolamasında saklamaz.</li>
                         <li><strong class="font-medium text-slate-800 dark:text-slate-200">Firebase kullanıcı kimliği ve oturum belirteçleri:</strong> Oturumun açık kalması için yenileme belirteci kullanıcının tarayıcısındaki eklenti depolamasında tutulur.</li>
                         <li><strong class="font-medium text-slate-800 dark:text-slate-200">Kullanıcının en yüksek Blocky skoru:</strong> Skor, Cloud Firestore içindeki <code>tetris_scores</code> koleksiyonunda kullanıcının Firebase kimliğine bağlı olarak saklanır.</li>
+                        <li><strong class="font-medium text-slate-800 dark:text-slate-200">Liderlik tablosu kaydı:</strong> Kullanıcı adı ve maksimum skor, Cloud Firestore içindeki <code>leaderboard</code> koleksiyonunda saklanır.</li>
                     </ul>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">3. Verilerin kullanım amacı</h2>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">3. Liderlik tablosu</h2>
+                    <p class="mb-3">Bulut hesabıyla giriş yapan kullanıcıların kullanıcı adı ve maksimum skoru, diğer giriş yapmış Blocky kullanıcılarının görebildiği ilk 10 liderlik tablosunda yer alabilir.</p>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-slate-400">
+                        <li>Liderlik tablosu yalnızca Blocky hesabıyla giriş yapmış kullanıcılara gösterilir.</li>
+                        <li>Şifre, e-posta biçimindeki teknik giriş değeri, Firebase kullanıcı kimliği ve oturum belirteçleri liderlik tablosunda gösterilmez.</li>
+                        <li>Kullanıcının maksimum skoru yükseldiğinde liderlik tablosundaki kaydı güncellenir.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">4. Verilerin kullanım amacı</h2>
                     <p class="mb-3">Bu veriler yalnızca:</p>
                     <ul class="list-disc pl-5 space-y-2 marker:text-slate-400 mb-3">
                         <li>Kullanıcı hesabının oluşturulması ve doğrulanması,</li>
                         <li>Kullanıcının oturumunun korunması,</li>
-                        <li>En yüksek skorun farklı bilgisayarlar ve yeniden kurulumlar arasında geri yüklenmesi ve eşitlenmesi</li>
+                        <li>En yüksek skorun farklı bilgisayarlar ve yeniden kurulumlar arasında geri yüklenmesi ve eşitlenmesi,</li>
+                        <li>Giriş yapmış oyuncular arasında ilk 10 maksimum skor sıralamasının gösterilmesi</li>
                     </ul>
                     <p>amaçlarıyla kullanılır.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">4. Misafir modu</h2>
-                    <p>Misafir modunda hesap bilgisi veya skor Firebase’e gönderilmez. Misafir skoru ve devam eden oyun yalnızca kullanıcının tarayıcısındaki eklenti depolamasında saklanır.</p>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">5. Misafir modu</h2>
+                    <p>Misafir modunda hesap bilgisi veya skor Firebase’e gönderilmez. Misafir skoru, seçilen tema ve devam eden oyun yalnızca kullanıcının tarayıcısındaki eklenti depolamasında saklanır. Misafir kullanıcılar çevrim içi liderlik tablosunu görüntüleyemez.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">5. Toplanmayan veriler</h2>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">6. Tema tercihleri</h2>
+                    <p>Seçilen blok teması yalnızca kullanıcının tarayıcısındaki eklenti depolamasında saklanır. Tema tercihi Firebase’e gönderilmez. Temaların kilit durumu kullanıcının maksimum skoruna göre belirlenir.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">7. Toplanmayan veriler</h2>
                     <p class="mb-3">Blocky;</p>
                     <ul class="list-disc pl-5 space-y-1 marker:text-slate-400 mb-3">
                         <li>Ziyaret edilen sayfaların içeriğini,</li>
                         <li>Gezinme geçmişini,</li>
-                        <li>Form veya şifre alanlarını,</li>
+                        <li>Form veya web sitesi şifre alanlarını,</li>
                         <li>Arama sorgularını,</li>
                         <li>Konum bilgisini,</li>
                         <li>Reklam kimliklerini,</li>
@@ -104,31 +121,38 @@
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">6. Üçüncü taraf hizmet sağlayıcısı</h2>
-                    <p>Bulut hesapları ve skor eşitleme özelliği için Google Firebase Authentication ve Google Cloud Firestore kullanılır. Google’ın kendi hizmet koşulları ve gizlilik uygulamaları bu hizmetler için ayrıca geçerlidir.</p>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">8. Üçüncü taraf hizmet sağlayıcısı</h2>
+                    <p>Bulut hesapları, skor eşitleme ve liderlik tablosu için Google Firebase Authentication ve Google Cloud Firestore kullanılır. Google’ın kendi hizmet koşulları ve gizlilik uygulamaları bu hizmetler için ayrıca geçerlidir.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">7. Veri paylaşımı ve satış</h2>
-                    <p>Blocky kullanıcı verilerini satmaz, reklam amacıyla kullanmaz ve yukarıda açıklanan Google Firebase altyapısı dışında üçüncü taraflarla paylaşmaz.</p>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">9. Veri paylaşımı ve satış</h2>
+                    <p>Blocky kullanıcı verilerini satmaz, reklam amacıyla kullanmaz ve yukarıda açıklanan Google Firebase altyapısı dışında üçüncü taraflarla paylaşmaz. Liderlik tablosunda yalnızca kullanıcı adı ve maksimum skor, giriş yapmış diğer Blocky kullanıcılarına gösterilir.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">8. Veri güvenliği</h2>
-                    <p>Firestore güvenlik kuralları, her kullanıcının yalnızca kendi skor belgesini okuyabilmesini ve değiştirebilmesini sağlayacak şekilde yapılandırılmıştır. Eklenti içinde uzak JavaScript kodu çalıştırılmaz.</p>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">10. Veri güvenliği</h2>
+                    <p class="mb-3">Firestore güvenlik kuralları;</p>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-slate-400">
+                        <li>Her kullanıcının yalnızca kendi özel skor belgesini değiştirebilmesini,</li>
+                        <li>Liderlik tablosunu yalnızca giriş yapmış kullanıcıların okuyabilmesini,</li>
+                        <li>Her kullanıcının yalnızca kendi kullanıcı adıyla eşleşen liderlik kaydını değiştirebilmesini,</li>
+                        <li>Maksimum skorun daha düşük bir değerle değiştirilememesini</li>
+                    </ul>
+                    <p class="mt-3">sağlayacak şekilde yapılandırılmıştır. Eklenti içinde uzak JavaScript kodu çalıştırılmaz.</p>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">9. Hesap ve veri silme</h2>
-                    <p class="mb-4">Kullanıcı, hesap ve skor verisinin silinmesini aşağıdaki iletişim adresinden talep edebilir. Talep doğrulandıktan sonra ilgili Firebase Authentication hesabı ve Firestore skor belgesi silinir.</p>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">11. Hesap ve veri silme</h2>
+                    <p class="mb-4">Kullanıcı, hesap ve skor verisinin silinmesini aşağıdaki iletişim adresinden talep edebilir. Talep doğrulandıktan sonra ilgili Firebase Authentication hesabı, özel skor belgesi ve liderlik tablosu kaydı silinir.</p>
                     <div class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 inline-block border border-slate-100 dark:border-slate-700">
                         <span class="font-medium text-slate-900 dark:text-white mr-2">İletişim:</span>
-                        <a href="mailto:yenerarda7@gmail.com" class="text-primary hover:text-blue-700 dark:hover:text-blue-400 font-medium transition-colors">yenerarda7@gmail.com</a>
+                        <a href="mailto:yenerarda7@gmail.com" class="text-primary font-medium hover:underline transition-colors">yenerarda7@gmail.com</a>
                     </div>
                 </section>
 
                 <section>
-                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">10. Değişiklikler</h2>
+                    <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">12. Değişiklikler</h2>
                     <p>Bu politika değiştirildiğinde güncellenme tarihi yenilenir. Önemli değişiklikler eklentinin mağaza sayfasında veya sürüm notlarında açıklanır.</p>
                 </section>
 
