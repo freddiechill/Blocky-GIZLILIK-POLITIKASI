@@ -144,7 +144,15 @@
 
                 <section>
                     <h2 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">11. Hesap ve veri silme</h2>
-                    <p class="mb-4">Kullanıcı, hesap ve skor verisinin silinmesini aşağıdaki iletişim adresinden talep edebilir. Talep doğrulandıktan sonra ilgili Firebase Authentication hesabı, özel skor belgesi ve liderlik tablosu kaydı silinir.</p>
+                    <p class="mb-3">Blocky hesabıyla giriş yapan kullanıcı, ana menünün sağ altındaki Ayarlar simgesini açıp “Hesabı Sil” seçeneğini kullanabilir. Kullanıcı güvenlik amacıyla mevcut şifresini yeniden girdikten sonra:</p>
+                    <ul class="list-disc pl-5 space-y-2 marker:text-slate-400 mb-3">
+                        <li>Firebase Authentication hesabı,</li>
+                        <li>Cloud Firestore içindeki özel skor belgesi,</li>
+                        <li>Cloud Firestore içindeki liderlik tablosu kaydı,</li>
+                        <li>Tarayıcıdaki ilgili oturum, skor, tema ve devam eden oyun önbelleği</li>
+                    </ul>
+                    <p class="mb-4">kalıcı olarak silinir. Bu işlem geri alınamaz.</p>
+                    <p class="mb-4">Kullanıcı eklenti içindeki silme seçeneğine erişemiyorsa aşağıdaki iletişim adresinden de silme talebinde bulunabilir.</p>
                     <div class="bg-slate-50 dark:bg-slate-700/50 rounded-lg p-4 inline-block border border-slate-100 dark:border-slate-700">
                         <span class="font-medium text-slate-900 dark:text-white mr-2">İletişim:</span>
                         <a href="mailto:yenerarda7@gmail.com" class="text-primary font-medium hover:underline transition-colors">yenerarda7@gmail.com</a>
